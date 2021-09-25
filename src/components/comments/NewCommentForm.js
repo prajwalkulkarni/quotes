@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { useParams } from 'react-router';
 import useHttp from '../../hooks/use-http';
 import { addComment } from '../../lib/api';
 import LoadingSpinner from '../UI/LoadingSpinner';
@@ -7,7 +6,7 @@ import classes from './NewCommentForm.module.css';
 
 const NewCommentForm = (props) => {
   const commentTextRef = useRef();
-  const {sendRequest,data,error,status} = useHttp(addComment)
+  const {sendRequest,error,status} = useHttp(addComment)
   
   
   const submitFormHandler = (event) => {
@@ -27,7 +26,7 @@ const NewCommentForm = (props) => {
     if(status==='completed' && !error){
       props.onAddedComment(props.quoteId);
     }
-  },[status,error])
+  },[status,error,props])
 
   return (
     <form className={classes.form} onSubmit={submitFormHandler}>

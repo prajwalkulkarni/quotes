@@ -8,7 +8,7 @@ import NewCommentForm from './NewCommentForm';
 import CommentsList from './CommentsList'
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
-  const {sendRequest,status,data,error} = useHttp(getAllComments)
+  const {sendRequest,status,data} = useHttp(getAllComments)
   let comments;
   const startAddCommentHandler = () => {
     setIsAddingComment(true);
