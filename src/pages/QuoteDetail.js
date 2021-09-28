@@ -11,12 +11,11 @@ export default function QuoteDetail(props){
     const param = useParams()
     const match = useRouteMatch()
     const {sendRequest,data,error,status} = useHttp(getSingleQuote)
-    // console.log(data)
+    // console.log(match.path)
     useEffect(()=>{
         sendRequest(param.quoteId)
     },[sendRequest,param.quoteId])
 
-    // console.log(match)
     if(status==="pending"){
         return (
             <div className='centered'>
