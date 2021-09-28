@@ -1,7 +1,25 @@
 .item {
-  margin: 1rem 0;
-  color: #4a5555;
+  /* margin: 1rem 0; */
+  color: #e2e2e2;
   font-size: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid teal;;
+  /* padding-bottom: 0.5rem; */
+}
+
+.usercomment{
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+
+
+.commentcontainer{
+  border: 2px solid #773183;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #773183;
+  margin: 1rem;
+  box-shadow: 5px 5px 7px rgb(88, 87, 87);
 }
