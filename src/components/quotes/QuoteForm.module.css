@@ -36,8 +36,8 @@
 
 .control input:focus,
 .control textarea:focus {
-  background-color: #cbf8f8;
-  outline-color: teal;
+  background-color: #ebc8f1;
+  outline-color: #773183;
 }
 
 .actions {
@@ -46,4 +46,9 @@
 
 .actions button {
   font-size: 1.25rem;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
 }
