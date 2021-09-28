@@ -1,11 +1,14 @@
 import React from "react";
+import logo from '../../assets/your_quotes.png'
 import { NavLink } from "react-router-dom";
 import classes from './MainNavigation.module.css'
 export default function MainNavigation(){
 
     return(
         <header className={classes.header}>
-            <div className={classes.logo}>Your Quotes</div>
+            <div className={classes.logo}>
+                <img src={logo} alt="Your Quotes" height="75" width="75"/>
+            </div>
             <nav className={classes.nav}>
                 <ul>
                     <li>
@@ -15,7 +18,7 @@ export default function MainNavigation(){
                     </li>
                     <li>
                         <NavLink to="/new-quote" activeClassName={classes.active}>
-                            Add Quotes
+                            Add Quote
                         </NavLink>
                     </li>
     
