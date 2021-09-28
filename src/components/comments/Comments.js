@@ -17,25 +17,26 @@ const Comments = () => {
   
   useEffect(()=>{
     sendRequest(params.quoteId)
-  },[params.quoteId,sendRequest])
+  },[sendRequest,params.quoteId])
   
   const addedCommentHandler = useCallback(()=>{
+    
     sendRequest(params.quoteId)
   },[sendRequest,params.quoteId])
-    if(status==="pending"){
-      comments = <div className='centered'>
-        <LoadingSpinner/>
-      </div>
-    }
+  if (status === "pending") {
+    comments = <div className='centered'>
+      <LoadingSpinner />
+    </div>
+  }
 
-    if(status==="completed" && (data&& data.length>0)){
-      comments = <CommentsList comments={data}/>
-    }
+  if (status === "completed" && (data && data.length > 0)) {
+    comments = <CommentsList comments={data} />
+  }
 
-    if(status==="completed" && (!data||data.length===0)){
-      comments = <p className='centered'>No comments yet!</p>
-    }
-  
+  if (status === "completed" && (!data || data.length === 0)) {
+    comments = <p className='centered'>No comments yet!</p>
+  }
+
  
   
   return (
@@ -47,9 +48,9 @@ const Comments = () => {
         </button>
       )}
       {isAddingComment && <NewCommentForm quoteId={params.quoteId} onAddedComment={addedCommentHandler} />}
-
-      
-      <p>Comments...</p>
+      <br/>
+      <hr/>
+      <h2>All Comments</h2>
 
       {comments}
     </section>
