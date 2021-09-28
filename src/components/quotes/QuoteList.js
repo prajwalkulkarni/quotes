@@ -28,7 +28,6 @@ const QuoteList = (props) => {
       search:'?sorting='+(isSortingAsc?'desc':'asc')
     })
     // history.push(`${location.pathname}?sorting=`+(isSortingAsc?'desc':'asc'))
-
   }
   return (
     <Fragment>
